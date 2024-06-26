@@ -27,13 +27,13 @@ const deployLock: DeployFunction = async function (
         waitConfirmations: networkConfig[network.name].blockConfirmations || 1,
     });
     
-    log("-----------------------------------");
-    log("Verifying Lock...");
+    // log("-----------------------------------");
+    // log("Verifying Lock...");
 
-    await run("verify:verify", {
-        address: lock.address,
-        construtorArguments: args
-    });
+    // await run("verify:verify", {
+    //     address: lock.address,
+    //     construtorArguments: args
+    // });
 }
 
 export default deployLock;

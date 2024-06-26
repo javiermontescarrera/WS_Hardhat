@@ -20,7 +20,7 @@ const deployLock: DeployFunction = async function (
     log("-----------------------------------");
     log("Deploying EducatethToken...");
 
-    const lock: DeployResult = await deploy("EducatethToken", {
+    const token: DeployResult = await deploy("EducatethToken", {
         from: deployer,
         args: args,
         log: true,
@@ -31,7 +31,7 @@ const deployLock: DeployFunction = async function (
     log("Verifying EducatethToken...");
 
     if (!developmentChains.includes(network.name)) {
-        await verify(lock.address, args);
+        await verify(token.address, args);
     }
 }
 
